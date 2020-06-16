@@ -1,0 +1,28 @@
+<div  class="container marketing">
+    <!-- START THE FEATURETTES -->
+    <div  *ngFor="let enc of equipos">
+      <hr class="featurette-divider">
+
+      <table style="width: 100%">
+        <td style="width: 50%">
+          <h2 >Liga: <span class="text-muted">{{enc.nombre}}</span></h2>
+          <p >Pais: <span>{{enc.pais}}</span></p>
+        </td>
+         <td >  
+          <img width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500" src="{{ url +'obtener-imagen-liga/' + enc.image}}" style="max-width:100%;width:300px;height:200px;" *ngIf="enc.image">
+          <img src="https://cdn4.iconfinder.com/data/icons/social-communication/142/add_photo-512.png" class="rounded-circle" width="200" height="200" *ngIf="!enc.image">  
+        </td>
+      </table>
+     <div  class="btn-group" role="group" aria-label="botones-card">
+       <button   type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalEditarLiga" (click)="getLiga(enc._id)">
+         Editar
+       </button>
+     </div>
+    <div  class="btn-group" role="group" aria-label="botones-card">
+      <button   type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalAgregarEquipo" (click)="getLiga(enc._id)">
+        Agregar equipos
+      </button>
+    </div>
+    </div>
+  
+  </div>
